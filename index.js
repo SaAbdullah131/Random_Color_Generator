@@ -6,16 +6,14 @@ for(let index=0; index<30;index++){
     colorContainerEl.classList.add("color-container");
     containerEl.appendChild(colorContainerEl);
 }
-const colorContainerEls=document.querySelector(".color-container");
-
-//console.log(colorContainerEls);
-
+const colorContainerEls=document.querySelectorAll(".color-container");
 generateColors();
 
 function generateColors(){
     colorContainerEls.forEach((colorContainerEl) => {
-        const newColorCode=randomColor();
-        console.log(newColorCode);
+        const newColorCode= randomColor();
+        colorContainerEl.style.backgroundColor="#"+ newColorCode;
+        colorContainerEl.innerText = "#"+ newColorCode;
     });
 }
 
